@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "Rbkit Chrome Developer Tools",
+  "description": "Adds Rbkit profiler to the Chrome Developer Tools.",
+  "version": "0.0.1",
+  "icons": {
+    "16": "icons/rbkit-16.png", "48": "icons/rbkit-48.png", "128": "icons/rbkit-128.png"
+  },
+
+  "page_action": {
+    "default_icon": "icons/rbkit-48.png"
+  },
+
+  "devtools_page": "main.html",
+  "background" : { "scripts" : [ "background.js" ], "persistent" : false },
+
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["websocket_client.js"]
+    }
+  ]
+}
